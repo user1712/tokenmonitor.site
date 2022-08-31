@@ -1,4 +1,5 @@
 <?php
+
 class Db
 {
 
@@ -8,12 +9,10 @@ class Db
         $connect->set_charset("utf8");
         return $connect;
     }
-    public function escape($value) {
+    public static function clear($value) {
         return Db::dbconnect()->real_escape_string($value);
     }
-    public function getLastId() {
-        return $this->connect->insert_id;
-    }
+
 
 }
 
