@@ -18,15 +18,15 @@
 </div>
 <footer class="templatemo-footer">
     <div class="templatemo-copyright">
-        <p>Copyright &copy; 2084 Your Company Name</p>
+        <p>Copyright &copy; 2022 <?php echo COMPANY ?></p>
     </div>
 </footer>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/Chart.min.js"></script>
-<script src="js/templatemo_script.js"></script>
+<script src="libs/js/jquery.min.js"></script>
+<script src="libs/js/bootstrap.min.js"></script>
+<script src="libs/js/Chart.min.js"></script>
+<script src="libs/js/templatemo_script.js"></script>
 <script type="text/javascript">
     // Line chart
     var randomScalingFactor = function () {

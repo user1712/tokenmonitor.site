@@ -13,13 +13,8 @@
 <div class="template-page-wrapper">
     <div class="navbar-collapse collapse templatemo-sidebar">
         <ul class="templatemo-sidebar-menu">
-            <li>
-                <form class="navbar-form">
-                    <input type="text" class="form-control" id="templatemo_search_box" placeholder="Search...">
-                    <span class="btn btn-default">Go</span>
-                </form>
-            </li>
-            <li class="active"><a href="#"><i class="fa fa-home"></i>Dashboard</a></li>
+
+            <li class="active"><a href="/admin/"><i class="fa fa-home"></i>Каталог организаций</a></li>
             <li class="sub open">
                 <a href="javascript:;">
                     <i class="fa fa-database"></i> Nested Menu

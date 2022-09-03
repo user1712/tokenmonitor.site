@@ -6,4 +6,4 @@ define('DB_PASSWORD', '');
 define('DB_DATABASE', 'tokenmonitor');
 
 define('DIR_SYSTEM', 'c:/OpenServer/domains/tokenmonitor.site/');
-
+define('COMPANY', 'Catalog');
