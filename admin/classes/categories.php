@@ -1,6 +1,7 @@
 <?php
 
 class Categories {
+    public $category_id;
 
     /// Главные категории
     public function getParentCategory()
@@ -19,6 +20,13 @@ class Categories {
     {
         $result = Db::dbconnect()->query("SELECT DISTINCT (`parent`) FROM categories WHERE parent > 0");
         return $result;
+    }
+
+    public function getCategory()
+    {
+        $result = Db::dbconnect()->query("SELECT `category`  FROM categories WHERE id = '$this->category_id'");
+        $result = $result->fetch_array(MYSQLI_ASSOC);
+        return $result['category'];
     }
 }
 

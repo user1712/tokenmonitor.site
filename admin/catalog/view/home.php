@@ -1,5 +1,6 @@
 <?php
 $products = new Products();
+$category = new Categories();
 ?>
 <div class="templatemo-content-wrapper">
     <div class="templatemo-content">
@@ -35,34 +36,50 @@ $products = new Products();
                             <th>Компания</th>
                             <th>Локация</th>
                             <th>Телефон</th>
+                            <th>E-mail</th>
+                            <th>Категория</th>
                             <th>Дата</th>
                             <th>Действие</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($products->getProducts() as $value) { ?>
+                        <?php foreach ($products->getProducts() as $value) { ?>
+                            <?php if (strlen($value['site']) > 5) {
+                                $site = '<li><a href="https://' . $value['site'] . '" target="_blank">Сайт</a></li>';
+                            }
+                                $category->category_id = $value['category_id'];
+                            ?>
                             <tr>
-                                <td><?php echo $value['company_id'];?></td>
-                                <td><?php echo $value['name'];?></td>
-                                <td><?php echo $value['location'];?></td>
-                                <td><?php echo $value['phone'];?></td>
-                                <td><?php echo $value['date'];?></td>
+                                <td><?php echo $value['company_id']; ?></td>
+                                <td><?php echo $value['name']; ?></td>
+                                <td><?php echo $value['location']; ?></td>
+                                <td><?php echo $value['phone']; ?></td>
+                                <td><?php echo $value['email']; ?></td>
+                                <td><?php echo $category->getCategory(); ?></td>
+                                <td><?php echo $value['date']; ?></td>
                                 <td>
                                     <!-- Split button -->
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-info">Действие</button>
-                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                        <button type="button" class="btn btn-info dropdown-toggle"
+                                                data-toggle="dropdown">
                                             <span class="caret"></span>
                                             <span class="sr-only">Toggle Dropdown</span>
                                         </button>
+                                        <?php $products->product = $value['company_id']; ?>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Изменить</a></li>
-                                            <li><a href="#">Удалить</a></li>
+                                            <li><a href="<?php echo $products->getProductUrl(); ?>">Изменить</a></li>
+                                            <?php echo $site; ?>
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                        <?php } ?>
+
+                            <?php
+                            {
+                                unset($site);
+                            }
+                        } ?>
 
                         </tbody>
                     </table>

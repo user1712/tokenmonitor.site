@@ -3,19 +3,21 @@ $categories = new Categories();
 $products = new Products();
 if ($_POST) {
     $products->product = $_POST['company'];
+    $products->product_id = $_POST['product_id'];
     $products->location = $_POST['location'];
     $products->phone = $_POST['phone'];
     $products->email = $_POST['email'];
     $products->text = $_POST['text'];
     $products->site = $_POST['site'];
-    $products->url = Db::translit($products->product);
     $products->category_id = $_POST['category'];
     $products->category_id_2 = $_POST['category_2'];
     $products->image = $_FILES['userfile']['name'];
 
 
-   echo $result = $products->setProduct($_FILES);
-
+    $result = $products->updateProduct($_FILES);
+    if($result) {
+        header("Refresh: 100");
+    }
 
 }
 
@@ -49,31 +51,33 @@ if ($_POST) {
                     <div class="row">
                         <div class="col-md-6 margin-bottom-15">
                             <label for="firstName" class="control-label">Название компании</label>
-                            <input type="text" class="form-control" id="firstName" name="company" required>
+                            <input type="text" class="form-control" id="firstName" name="company" value="<?php echo $sbi['arr']['name'];?>" required>
                         </div>
                         <div class="col-md-6 margin-bottom-15">
                             <label for="lastName" class="control-label">Адрес</label>
-                            <input type="text" class="form-control" id="lastName" name="location">
+                            <input type="text" class="form-control" id="lastName" name="location"  value="<?php echo $sbi['arr']['location'];?>">
                         </div>
                     </div>
+                    <input type="hidden" name="product_id" value="<?php echo $sbi['arr']['company_id'];?>">
+
                     <div class="row">
                         <div class="col-md-6 margin-bottom-15">
                             <label for="firstName" class="control-label">Телефон</label>
-                            <input type="text" class="form-control" id="firstName" name="phone" required>
+                            <input type="text" class="form-control" id="firstName" name="phone"  value="<?php echo $sbi['arr']['phone'];?>" required>
                         </div>
                         <div class="col-md-6 margin-bottom-15">
                             <label for="firstName" class="control-label">Сайт</label>
-                            <input type="text" class="form-control" id="firstName" name="site" >
+                            <input type="text" class="form-control" id="firstName" name="site"  value="<?php echo $sbi['arr']['site'];?>" >
                         </div>
                         <div class="col-md-6 margin-bottom-15">
                             <label for="lastName" class="control-label">E-mail</label>
-                            <input type="text" class="form-control" id="lastName" name="email" required>
+                            <input type="text" class="form-control" id="lastName" name="email"  value="<?php echo $sbi['arr']['email'];?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 margin-bottom-15">
                             <label for="notes">Описание</label>
-                            <textarea class="form-control" rows="3" id="notes" name="text" required></textarea>
+                            <textarea class="form-control" rows="3" id="notes" name="text"  value="" required><?php echo $sbi['arr']['text'];?></textarea>
                         </div>
                     </div>
                     <label for="singleSelect">Категория</label>
