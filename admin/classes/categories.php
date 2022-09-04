@@ -28,5 +28,16 @@ class Categories {
         $result = $result->fetch_array(MYSQLI_ASSOC);
         return $result['category'];
     }
+
+    public function removeCategory()
+    {
+        $result = Db::dbconnect()->query("DELETE FROM `categories` WHERE `id` = '$this->category_id'");
+        $result = Db::dbconnect()->query("SELECT `id`  FROM categories WHERE parent = '$this->category_id'");
+        foreach ($result as $item) {
+            $id = $item['id'];
+            $result = Db::dbconnect()->query("DELETE FROM `categories` WHERE `id` = '$id'");
+        }
+
+    }
 }
 

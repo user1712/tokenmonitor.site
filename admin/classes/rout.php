@@ -16,6 +16,7 @@ class Rout{
         if($result['category_id'] > 0) {
 
         }
+
         if($result['product_id'] OR $result['category_id'] < 1) {
             return false;
         }

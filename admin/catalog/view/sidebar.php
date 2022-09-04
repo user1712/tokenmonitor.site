@@ -14,7 +14,11 @@
     <div class="navbar-collapse collapse templatemo-sidebar">
         <ul class="templatemo-sidebar-menu">
 
-            <li class="active"><a href="/admin/"><i class="fa fa-home"></i>Каталог организаций</a></li>
+            <li class="<?php echo $menu1;?>"><a href="/admin/"><i class="fa fa-home"></i>Каталог организаций</a></li>
+            <li class="<?php echo $menu4;?>"><a href="/admin/categories"><i class="fa fa-home"></i>Категории</a></li>
+            <li class="<?php echo $menu3;?>"><a href="/admin/reviews"><i class="fa fa-cog"></i>Отзывы</a></li>
+            <li class="<?php echo $menu2;?>"><a href="/admin/settings"><i class="fa fa-cog"></i>Настройки сайта</a></li>
+
             <li class="sub open">
                 <a href="javascript:;">
                     <i class="fa fa-database"></i> Nested Menu
@@ -34,7 +38,7 @@
             </li>
             <li><a href="tables.html"><i class="fa fa-users"></i><span class="badge pull-right">NEW</span>Manage
                     Users</a></li>
-            <li><a href="preferences.html"><i class="fa fa-cog"></i>Preferences</a></li>
+
             <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign
                     Out</a></li>
         </ul>
