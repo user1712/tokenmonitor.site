@@ -14,9 +14,10 @@
     <div class="navbar-collapse collapse templatemo-sidebar">
         <ul class="templatemo-sidebar-menu">
 
-            <li class="<?php echo $menu1;?>"><a href="/admin/"><i class="fa fa-home"></i>Каталог организаций</a></li>
-            <li class="<?php echo $menu4;?>"><a href="/admin/categories"><i class="fa fa-home"></i>Категории</a></li>
-            <li class="<?php echo $menu3;?>"><a href="/admin/reviews"><i class="fa fa-cog"></i>Отзывы</a></li>
+            <li class="<?php echo $menu1;?>"><a href="/admin/"> <i class="fa fa-database"></i>Каталог организаций</a></li>
+            <li class="<?php echo $menu4;?>"><a href="/admin/categories"><i class="fa fa-columns" aria-hidden="true"></i>Категории</a></li>
+            <li class="<?php echo $menu5;?>"><a href="/admin/pages"><i class="fa fa-file" aria-hidden="true"></i></i>Страницы</a></li>
+            <li class="<?php echo $menu3;?>"><a href="/admin/reviews"><i class="fa fa-star" aria-hidden="true"></i></i>Отзывы</a></li>
             <li class="<?php echo $menu2;?>"><a href="/admin/settings"><i class="fa fa-cog"></i>Настройки сайта</a></li>
 
             <li class="sub open">

@@ -64,7 +64,7 @@ if($_SESSION['sort'] == 2) {
                                 <td><?php echo $value['location']; ?></td>
                                 <td><?php echo $value['phone']; ?></td>
                                 <td><?php echo $value['email']; ?></td>
-                                <td><?php echo $category->getCategory(); ?></td>
+                                <td><?php echo $category->getCategory()['category']; ?></td>
                                 <td><?php echo $value['date']; ?></td>
                                 <td>
                                     <!-- Split button -->

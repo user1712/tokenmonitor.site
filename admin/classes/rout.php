@@ -14,7 +14,22 @@ class Rout{
 
         }
         if($result['category_id'] > 0) {
-
+            $id = $result['category_id'];
+            $result = Db::dbconnect()->query("SELECT * FROM categories WHERE `id` = '$id'");
+            $result = $result->fetch_array(MYSQLI_ASSOC);
+            return array(
+                'type' => 'category',
+                'arr' => $result
+            );
+        }
+        if($result['page_id'] > 0) {
+            $id = $result['page_id'];
+            $result = Db::dbconnect()->query("SELECT * FROM pages WHERE `id` = '$id'");
+            $result = $result->fetch_array(MYSQLI_ASSOC);
+            return array(
+                'type' => 'page',
+                'arr' => $result
+            );
         }
 
         if($result['product_id'] OR $result['category_id'] < 1) {

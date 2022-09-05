@@ -76,7 +76,7 @@ class Products
         }
 
         $result = Db::dbconnect()->query("INSERT INTO `products`(`name`, `phone`, `location`, `email`, `text`, `image`, `category_id`, `date`, `site`, `rate`) VALUES ('" . Db::clear($this->product) . "','" . Db::clear($this->phone) . "','" . Db::clear($this->location) . "','" . Db::clear($this->email) . "','" . Db::clear($this->text) . "','" . Db::clear($this->image) . "','" . Db::clear($this->category_id) . "',NOW(), '" . Db::clear($this->site) . "', '0')");
-        $result = Db::dbconnect()->query("INSERT INTO `urls`(`product_id`, `category_id`, `url`) VALUES ((SELECT `company_id` FROM products ORDER BY company_id DESC LIMIT 1),'0', '/admin/$this->url');");
+        $result = Db::dbconnect()->query("INSERT INTO `urls`(`product_id`, `category_id`, `url`, `page_id`) VALUES ((SELECT `company_id` FROM products ORDER BY company_id DESC LIMIT 1),'0', '/admin/$this->url', '0');");
 
         return $result;
 

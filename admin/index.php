@@ -27,6 +27,33 @@ if ($_SESSION['auth'] == 1) {
         require 'catalog/view/footer.php';
         exit;
     }
+    if ($_SERVER['REQUEST_URI'] == '/admin/pages') {
+        $menu5 = 'active';
+        require 'classes/pages.php';
+        require 'catalog/view/head.php';
+        require 'catalog/view/sidebar.php';
+        require 'catalog/view/pages.php';
+        require 'catalog/view/footer.php';
+        exit;
+    }
+    if ($_SERVER['REQUEST_URI'] == '/admin/newpage') {
+        $menu5 = 'active';
+        require 'classes/pages.php';
+        require 'catalog/view/head.php';
+        require 'catalog/view/sidebar.php';
+        require 'catalog/view/newpage.php';
+        require 'catalog/view/footer.php';
+        exit;
+    }
+    if ($_SERVER['REQUEST_URI'] == '/admin/newcategory') {
+        require 'classes/categories.php';
+        require 'catalog/view/head.php';
+        require 'catalog/view/sidebar.php';
+        require 'catalog/view/newcategory.php';
+        require 'catalog/view/footer.php';
+        exit;
+    }
+
     if ($_SERVER['REQUEST_URI'] == '/admin/reviews') {
         $menu3 = 'active';
         require 'classes/reviews.php';
@@ -97,6 +124,24 @@ if ($_SESSION['auth'] == 1) {
             require 'catalog/view/head.php';
             require 'catalog/view/sidebar.php';
             require 'catalog/view/editproduct.php';
+            require 'catalog/view/footer.php';
+            exit;
+        }
+        if($sbi['type'] == 'page') {
+            $menu5 = 'active';
+            require 'classes/pages.php';
+            require 'catalog/view/head.php';
+            require 'catalog/view/sidebar.php';
+            require 'catalog/view/editpage.php';
+            require 'catalog/view/footer.php';
+            exit;
+        }
+        if($sbi['type'] == 'category') {
+            $menu4 = 'active';
+            require 'classes/categories.php';
+            require 'catalog/view/head.php';
+            require 'catalog/view/sidebar.php';
+            require 'catalog/view/editcategory.php';
             require 'catalog/view/footer.php';
             exit;
         }

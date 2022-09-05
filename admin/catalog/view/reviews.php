@@ -20,23 +20,8 @@ if ($_POST['remove']) {
         <h1>Отзывы</h1>
         <div class="row">
             <div class="col-md-12">
-                <div class="btn-group pull-right" id="templatemo_sort_btn">
-                    <button type="button" class="btn btn-default">Sort by</button>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">First Name</a></li>
-                        <li><a href="#">Last Name</a></li>
-                        <li><a href="#">Username</a></li>
-                    </ul>
-                </div>
-                <div class="table-responsive">
 
-                    <ul class="nav nav-pills">
-                        <li class="active"><a href="/admin/newproduct">Добавить отзыв</a></li>
-                    </ul>
+                <div class="table-responsive">
 
                     <table class="table table-striped table-hover table-bordered">
                         <thead>
